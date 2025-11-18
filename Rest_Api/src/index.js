@@ -25,10 +25,10 @@ const apiKeyMiddleware = config.nodeEnv === "production" ? validateApiKeyProduct
 app.use("/api/users", apiKeyMiddleware, userRoutes);
 app.use("/api/movies", apiKeyMiddleware, movieRoutes);
 
-app.use((req, res, next) => {
-  if (req.path.startsWith("/api")) return next();
-  res.sendFile(path.join(__dirname, "../public/index.html"));
-});
+// app.use((req, res, next) => {
+//   if (req.path.startsWith("/api")) return next();
+//   res.sendFile(path.join(__dirname, "../public/index.html"));
+// });
 
 app.get("/health", (req, res) => {
   res.json({
