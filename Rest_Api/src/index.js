@@ -15,7 +15,7 @@ const app = express();
 
 await initializeDatabase();
 
-app.use(express.static(path.join(__dirname, "../public")));
+//app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(logMiddleware);
